@@ -8,6 +8,19 @@
       name="description"
       content="VR Headsets Tech Shop. Discover our line of VR Headsets"
     />
+    <style>
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+    </style>
     <title>Home - Tech Shop</title>
     <link
       href="https://fonts.googleapis.com/css?family=Heebo:300,400,600,700&display=swap"
@@ -75,12 +88,20 @@
             <span>Headsets</span>
           </a>
         </section>
-        <nav>
+        <nav aria-label="Main navigation">
           <ul>
             <li><a href="about.html">About us</a></li>
             <li><a href="index.html#best-sellers-section">Best Sellers</a></li>
             <li><a href="index.html#newsletter-section">Newsletter</a></li>
-            <li class="menu-icon"><img src="images/menu_icon.png" /></li>
+            <li class="menu-icon">
+              <button
+                aria-label="Open menu"
+                aria-expanded="false"
+                aria-controls="mobile-menu"
+              >
+                <img src="images/menu_icon.png" alt="Menu icon" />
+              </button>
+            </li>
           </ul>
         </nav>
       </div>
@@ -112,17 +133,23 @@
 
     <section class="country-bar hidden"></section>
 
-    <section class="best-sellers" id="best-sellers-section">
-      <h2>Best Sellers</h2>
+    <section
+      class="best-sellers"
+      id="best-sellers-section"
+      aria-labelledby="best-sellers-heading"
+    >
+      <h2 id="best-sellers-heading">Best Sellers</h2>
       <hr />
-      <div class="product-slider">
+      <div class="product-slider" role="list">
         <div class="container">
-          <div class="product new">
+          <div class="product new" role="listitem">
             <div class="product-picture">
               <img
                 src="images/vr1.avif"
-                alt="product: Penom Case"
+                alt="Apple VR Headset - Premium virtual reality headset with high-resolution display"
                 loading="lazy"
+                width="300"
+                height="300"
               />
             </div>
             <div class="product-info">
@@ -131,7 +158,9 @@
               <h3 class="price">
                 <span>US$ 450.00</span>
               </h3>
-              <button>Add to bag</button>
+              <button aria-label="Add Apple Headset to shopping bag">
+                Add to bag
+              </button>
             </div>
           </div>
 
@@ -183,12 +212,26 @@
       </div>
     </section>
 
-    <section class="newsletter" id="newsletter-section">
-      <h3>Newsletter Signup</h3>
+    <section
+      class="newsletter"
+      id="newsletter-section"
+      aria-labelledby="newsletter-heading"
+    >
+      <h3 id="newsletter-heading">Newsletter Signup</h3>
       <p>Subscribe now and don't miss a single deal!</p>
-      <form>
-        <input type="email" name="email" placeholder="Your email..." />
-        <button type="submit">Subscribe</button>
+      <form aria-label="Newsletter subscription form">
+        <label for="email-input" class="visually-hidden">Email address</label>
+        <input
+          type="email"
+          id="email-input"
+          name="email"
+          placeholder="Your email..."
+          aria-required="true"
+          required
+        />
+        <button type="submit" aria-label="Subscribe to newsletter">
+          Subscribe
+        </button>
       </form>
     </section>
 
