@@ -160,3 +160,6 @@ TBT 부분은 스크립트 로딩 방식과 관련이 있는 지표기 떄문에
 | TBT    | Total Blocking Time      | 110ms 🟢  | 0 ms 🟢   | 100% 전면 개선 🟢 |
 | CLS    | Cumulative Layout Shift  | 0.429 🔴  | 0.054 🟢  | 약 90% 향상 🟢    |
 | SI     | Speed Index              | 0.7s 🟢   | 0.6s 🟢   | 일부 개선 🟢      |
+
+![image](https://github.com/user-attachments/assets/11be91aa-c280-4115-8bc1-606a28b93f5a)
+
