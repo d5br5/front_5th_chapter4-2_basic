@@ -5,35 +5,42 @@
 
 ### 개선 전 성능 지표
 
-#### 🎯 Lighthouse 점수
+#### 🎯 Lighthouse 점수 + Core Web Vitals (2024)
 
-| 카테고리 | 점수 | 상태 |
-|----------|------|------|
-| Performance | 72% | 🟠 |
-| Accessibility | 82% | 🟠 |
-| Best Practices | 75% | 🟠 |
-| SEO | 82% | 🟠 |
+| 카테고리 | 점수 |
+|----------|------|
+| Performance | 72%  🟠 |
+| Accessibility | 82% 🟠 |
+| Best Practices | 75% 🟠 |
+| SEO | 82% 🟠 |
 
-#### 📊 Core Web Vitals
-| 메트릭 | 설명 | 측정값 | 상태 |
-|--------|------|--------|------|
-| LCP | Largest Contentful Paint | 14.56s | 🔴 |
-| INP | Interaction to Next Paint | N/A | 🟢 |
-| CLS | Cumulative Layout Shift | 0.011 | 🟢 |
+| 메트릭 | 설명 | 측정값 | 
+|--------|------|--------|
+| LCP | Largest Contentful Paint | 14.56s 🔴 |
+| INP | Interaction to Next Paint | N/A 🟢 |
+| CLS | Cumulative Layout Shift | 0.011 🟢 |
 
 
 #### PageSpeed Insights 점수
 
-| 카테고리 | 점수 | 상태 |
-|----------|------|------|
-| Performance | 71% | 🟠 |
-| Accessibility | 81% | 🟠 |
-| Best Practices | 96% | 🟢 |
-| SEO | 82% | 🟠 |
+| 카테고리 | 점수 |
+|----------|------|
+| Performance | 71% 🟠 |
+| Accessibility | 81% 🟠 |
+| Best Practices | 96% 🟢 |
+| SEO | 82% 🟠 |
+
+| 메트릭 | 설명 | 측정값 | 
+|--------|------|--------|
+| FCP | First Contentful Paint | 0.7s 🟢 |
+| LCP | Largest Contentful Paint | 1.9s 🟠 |
+| TBT | Total Blocking Time | 110ms 🟢 |
+| CLS | Cumulative Layout Shift | 0.429 🔴 |
+| SI | Speed Index | 0.7s 🟢 |
 
 ### 개선사항
 
-#### 이미지 최적화
+#### 이미지 최적화 (440fbba350b10461d3066362dea459f24c44b741)
 
 - 이미지 포맷: JPG -> avif 변경하여, 파일 크기 및 로딩 속도 감소
 - 반응형 이미지: 디바이스별 이미지 모두 로드 -> picture + srcset으로 디바이스별 필요 이미지만 로드
@@ -54,4 +61,35 @@
   <img src="images/Hero_Desktop.avif" alt="VR Headsets Hero Image" loading="eager"  width="960" height="560"/>
 </picture>
 ```
+
+**적용 전후 개선된 성능 지표 비교**
+
+[ 🎯 Lighthouse 점수 + 📊 Core Web Vitals (2024) ]
+
+| 카테고리 | 점수(전) | 점수(후) |
+|----------|------|------|
+| Performance | 72% 🟠 | 76% 🟠 |
+
+| 메트릭 | 설명 | 측정값(전) | 측정값(후) |
+|--------|------|--------|------|
+| LCP | Largest Contentful Paint | 14.56s 🔴 | 5.70s 🔴 |
+
+
+[ PageSpeed Insights 점수 ]
+
+| 카테고리 | 점수(전) | 점수(후)
+|----------|------|----|
+| Performance | 71% 🟠 | 78% 🟠 |
+| Accessibility | 81% 🟠 | 91% 🟢 |
+| SEO | 82% 🟠 |91% 🟢 |
+
+| 메트릭 | 설명 | 측정값(전) | 측정값(후) |
+|--------|------|--------|----|
+| TBT | Total Blocking Time | 110ms 🟢 | 260ms 🟠|
+| CLS | Cumulative Layout Shift | 0.429 🔴 | 0.056 🟢|
+
+개선된 지표가 많고, 상당부분 개선된 것을 확인 할 수 있다.
+
+TBT 부분은 스크립트 로딩 방식과 관련이 있는 지표기 떄문에, 추후 개선 항목에서 살펴보자.
+
 
