@@ -99,4 +99,35 @@ commit: 440fbba350b10461d3066362dea459f24c44b741
 
 TBT 부분은 스크립트 로딩 방식과 관련이 있는 지표기 떄문에, 추후 개선 항목에서 살펴보자.
 
-####
+#### 이미지 lazy loading
+
+```html
+<img src="images/vr1.avif" alt="product: Penom Case" loading="lazy" />
+```
+
+#### head script 최적화
+
+- defer 속성 추가하여 스크립트를 병렬 로드
+
+```html
+<script
+  defer
+  type="text/javascript"
+  src="//www.freeprivacypolicy.com/public/cookie-consent/4.1.0/cookie-consent.js"
+  charset="UTF-8"
+></script>
+```
+
+- font preload
+
+```html
+<link
+  href="https://fonts.googleapis.com/css?family=Heebo:300,400,600,700&display=swap"
+  rel="preload"
+  as="style"
+/>
+```
+
+#### meta 태그 보완
+
+- description content 추가
